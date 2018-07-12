@@ -3,12 +3,10 @@ import Shelf from './Shelf';
 import * as BooksAPI from './BooksAPI'
 
 class MyBooks extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      myBooks: {},
-      loading: false
+      myBooks: {}
     }
   }
 
@@ -17,7 +15,6 @@ class MyBooks extends Component {
   }
 
   handleChange = (e, book) => {
-    e.preventDefault();
     const value = e.target.value;
     BooksAPI.update(book, value)
       .then(() =>
@@ -70,9 +67,8 @@ class MyBooks extends Component {
     }))
   }
 
-
   render() {
-    const { myBooks, loading } = this.state;
+    const { myBooks } = this.state;
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -85,7 +81,6 @@ class MyBooks extends Component {
                       shelfTitle={shelf.title}
                       shelfBooks={shelf.books}
                       handleChange={this.handleChange}
-                      loading={loading}
               />
             )}
           </div>
