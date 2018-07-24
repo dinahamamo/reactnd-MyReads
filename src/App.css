@@ -9,7 +9,11 @@ body, .app {
 }
 
 /* main page */
-
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 20em;
+}
 .list-books-title {
   padding: 10px 0;
   background: #2e7c31;
