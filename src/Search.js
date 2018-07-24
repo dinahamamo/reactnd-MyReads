@@ -17,9 +17,9 @@ class Search extends Component {
         />
         <div className="search-books-results">
         { (searching)?
-            <p>Searching Books..</p>
+            <p className="status">Searching Books..</p>
           : (noBooksFound)?
-            <p>No Books Found</p>
+            <p className="status">No Books Found</p>
           : <ol className="books-grid">
               {books.map((book) => <Book  key={book.id}
                                           book={book}
